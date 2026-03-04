@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="$HEUY – Heuy Asexual Token on Solana. The village hero who defeats gangs... but never gets hard. Eternal tease. Zero release." />
-  <meta property="og:title" content="$HEUY – Heuy Asexual Token | Solana" />
-  <meta property="og:description" content="The eternally flaccid hero of Solana. Community-driven. Maximum thirst-trap vibes." />
-  <title>$HEUY – Heuy Asexual Token | Solana Meme Coin</title>
+  <meta name="description" content="$HEUY – Heuy Asexual Token on World Chain. The village hero who defeats gangs... but never gets hard. Eternal tease. Zero release." />
+  <meta property="og:title" content="$HEUY – Heuy Asexual Token | World Chain" />
+  <meta property="og:description" content="The eternally flaccid hero of World Chain. Born on Puf. Community-driven. Maximum thirst-trap vibes." />
+  <title>$HEUY – Heuy Asexual Token | World Chain Meme Coin</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
@@ -166,23 +166,24 @@
       text-transform:uppercase; letter-spacing:2.5px; font-weight:600;
     }
 
-    /* ── CHARACTER SVG WRAPPER ── */
+    /* ── CHARACTER IMAGE WRAPPER ── */
     .char-wrap {
-      position:relative; width:280px; height:420px;
+      position:relative; width:320px; height:460px;
     }
     .char-halo {
-      position:absolute; inset:-40px; border-radius:50%;
-      background: radial-gradient(ellipse, rgba(74,127,255,.25) 0%, rgba(0,232,122,.08) 40%, transparent 70%);
+      position:absolute; inset:-50px; border-radius:50%;
+      background: radial-gradient(ellipse, rgba(74,127,255,.28) 0%, rgba(0,232,122,.1) 40%, transparent 70%);
       animation: halo-pulse 3.5s ease-in-out infinite;
     }
     @keyframes halo-pulse {
       0%,100% { transform:scale(1);   opacity:.6; }
       50%      { transform:scale(1.12); opacity:1; }
     }
-    .char-svg {
+    .char-img {
       position:relative; width:100%; height:100%;
-      filter: drop-shadow(0 0 28px rgba(74,127,255,.55))
-              drop-shadow(0 0 8px  rgba(0,232,122,.3));
+      object-fit:contain; object-position:center bottom;
+      filter: drop-shadow(0 0 32px rgba(74,127,255,.6))
+              drop-shadow(0 0 12px rgba(0,232,122,.35));
       animation: hero-float 4s ease-in-out infinite;
     }
     @keyframes hero-float {
@@ -513,7 +514,7 @@
       nav { padding:12px 16px; }
       .nav-links a:not(.nav-cta) { display:none; }
       .hero { padding:40px 16px 70px; }
-      .char-wrap { width:210px; height:315px; }
+      .char-wrap { width:240px; height:340px; }
       .about-card { padding:26px 20px; }
       .stat { border-right:none; border-bottom:1px solid var(--border); }
       .stat:last-child { border-bottom:none; }
@@ -589,6 +590,8 @@
     <span>🔥 FAIR LAUNCH</span>
     <span>🔥 LP BURNED</span>
     <span>🏆 OWNERSHIP RENOUNCED</span>
+    <span>🐡 BORN ON PUF</span>
+    <span>🌐 WORLD CHAIN</span>
     <span>💎 $HEUY TO THE MOON</span>
     <span>🚫🍆 NO PUMP JUST VIBES</span>
     <span>⚔️ VILLAGE HERO</span>
@@ -596,6 +599,8 @@
     <span>🔥 FAIR LAUNCH</span>
     <span>🔥 LP BURNED</span>
     <span>🏆 OWNERSHIP RENOUNCED</span>
+    <span>🐡 BORN ON PUF</span>
+    <span>🌐 WORLD CHAIN</span>
   </div>
 </div>
 
@@ -610,227 +615,20 @@
 
     <div class="hero-badge">
       <svg width="8" height="8" viewBox="0 0 8 8" fill="none"><circle cx="4" cy="4" r="4" fill="#00e87a"/></svg>
-      Now live on Solana &nbsp;·&nbsp; Fair Launch
+      Now live on World Chain &nbsp;·&nbsp; Born on Puf &nbsp;·&nbsp; Fair Launch
     </div>
 
-    <!-- ── Heuy Character SVG Illustration ── -->
+    <!-- ── Heuy Character Image ── -->
     <div class="char-wrap">
       <div class="char-halo"></div>
-      <svg class="char-svg" viewBox="0 0 280 420" xmlns="http://www.w3.org/2000/svg" aria-label="Heuy the Asexual Hero">
-        <defs>
-          <!-- Skin gradient -->
-          <linearGradient id="skin" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%"   stop-color="#f5c8a0"/>
-            <stop offset="100%" stop-color="#e8a870"/>
-          </linearGradient>
-          <!-- Platinum hair -->
-          <linearGradient id="hair" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%"   stop-color="#ffffff"/>
-            <stop offset="40%"  stop-color="#ddeeff"/>
-            <stop offset="100%" stop-color="#b8d4ff"/>
-          </linearGradient>
-          <!-- Blue crop-top -->
-          <linearGradient id="shirt" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%"   stop-color="#3a7bff"/>
-            <stop offset="100%" stop-color="#1a4bd9"/>
-          </linearGradient>
-          <!-- White briefs -->
-          <linearGradient id="briefs" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%"   stop-color="#e8f0ff"/>
-            <stop offset="100%" stop-color="#c0ccee"/>
-          </linearGradient>
-          <!-- Red cape -->
-          <linearGradient id="cape" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%"   stop-color="#ff4466"/>
-            <stop offset="100%" stop-color="#cc1133"/>
-          </linearGradient>
-          <!-- Tights -->
-          <linearGradient id="tights" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%"   stop-color="#1a2a7a"/>
-            <stop offset="50%"  stop-color="#3a55cc"/>
-            <stop offset="100%" stop-color="#1a2a7a"/>
-          </linearGradient>
-          <!-- Glow for eyes -->
-          <filter id="em-glow">
-            <feGaussianBlur stdDeviation="2" result="blur"/>
-            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-          </filter>
-          <!-- Overall character shimmer -->
-          <filter id="char-glow">
-            <feGaussianBlur stdDeviation="4" result="blur"/>
-            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-          </filter>
-          <!-- Rune pattern on sleeves -->
-          <pattern id="runes" x="0" y="0" width="12" height="14" patternUnits="userSpaceOnUse">
-            <text x="1" y="11" font-size="9" fill="rgba(74,127,255,.7)" font-family="serif">ᚱ</text>
-          </pattern>
-        </defs>
-
-        <!-- ── RED CAPE (behind body) ── -->
-        <path d="M90 120 Q40 160 30 300 Q28 340 60 360 Q90 370 110 340 L120 280 Q100 240 100 180 Z"
-              fill="url(#cape)" opacity=".92"/>
-        <path d="M92 122 Q50 160 42 280 Q45 310 62 330"
-              fill="none" stroke="rgba(255,255,255,.15)" stroke-width="1.5"/>
-        <!-- cape highlight sheen -->
-        <path d="M88 125 Q55 175 48 270" fill="none" stroke="rgba(255,200,200,.2)" stroke-width="3" stroke-linecap="round"/>
-
-        <!-- ── THIGH-HIGH TIGHTS (legs) ── -->
-        <!-- left leg -->
-        <path d="M108 260 L96 390 Q94 408 110 412 Q122 414 128 396 L132 270 Z"
-              fill="url(#tights)"/>
-        <!-- right leg -->
-        <path d="M148 260 L156 390 Q158 408 144 412 Q132 414 128 396 L128 270 Z"
-              fill="url(#tights)"/>
-        <!-- leg glossy highlight -->
-        <path d="M112 270 L102 375" fill="none" stroke="rgba(180,200,255,.3)" stroke-width="3" stroke-linecap="round"/>
-        <path d="M152 270 L150 375" fill="none" stroke="rgba(180,200,255,.3)" stroke-width="3" stroke-linecap="round"/>
-        <!-- knee accent rings -->
-        <ellipse cx="112" cy="330" rx="12" ry="5" fill="none" stroke="rgba(100,150,255,.5)" stroke-width="1.5"/>
-        <ellipse cx="148" cy="330" rx="12" ry="5" fill="none" stroke="rgba(100,150,255,.5)" stroke-width="1.5"/>
-        <!-- thigh-high top band -->
-        <rect x="94"  y="258" width="36" height="8" rx="4" fill="rgba(80,120,255,.6)" stroke="rgba(150,180,255,.4)" stroke-width="1"/>
-        <rect x="130" y="258" width="36" height="8" rx="4" fill="rgba(80,120,255,.6)" stroke="rgba(150,180,255,.4)" stroke-width="1"/>
-
-        <!-- ── ARM RUNE SLEEVES ── -->
-        <!-- left arm -->
-        <rect x="58"  y="160" width="36" height="78" rx="14" fill="url(#runes)" stroke="rgba(74,127,255,.4)" stroke-width="1"/>
-        <rect x="58"  y="160" width="36" height="78" rx="14" fill="rgba(20,40,120,.6)"/>
-        <rect x="58"  y="160" width="36" height="78" rx="14" fill="url(#runes)" opacity=".8"/>
-        <!-- right arm -->
-        <rect x="186" y="160" width="36" height="78" rx="14" fill="rgba(20,40,120,.6)" stroke="rgba(74,127,255,.4)" stroke-width="1"/>
-        <rect x="186" y="160" width="36" height="78" rx="14" fill="url(#runes)" opacity=".8"/>
-        <!-- rune glow accent dots -->
-        <circle cx="76"  cy="175" r="2" fill="#4a7fff" opacity=".7"/>
-        <circle cx="76"  cy="195" r="2" fill="#00e87a" opacity=".6"/>
-        <circle cx="76"  cy="215" r="2" fill="#4a7fff" opacity=".7"/>
-        <circle cx="204" cy="175" r="2" fill="#4a7fff" opacity=".7"/>
-        <circle cx="204" cy="195" r="2" fill="#00e87a" opacity=".6"/>
-        <circle cx="204" cy="215" r="2" fill="#4a7fff" opacity=".7"/>
-
-        <!-- ── TORSO BODY ── -->
-        <!-- skin exposed abs/navel strip -->
-        <rect x="88" y="196" width="104" height="46" rx="6" fill="url(#skin)"/>
-        <!-- ab definition lines (stylized) -->
-        <line x1="140" y1="198" x2="140" y2="240" stroke="rgba(140,80,30,.25)" stroke-width="1.5"/>
-        <line x1="100" y1="208" x2="180" y2="208" stroke="rgba(140,80,30,.2)" stroke-width="1"/>
-        <line x1="100" y1="222" x2="180" y2="222" stroke="rgba(140,80,30,.2)" stroke-width="1"/>
-        <!-- navel -->
-        <circle cx="140" cy="232" r="3.5" fill="rgba(120,65,20,.35)"/>
-
-        <!-- ── BLUE CROP TOP ── -->
-        <path d="M78 130 Q78 116 140 112 Q202 116 202 130 L206 198 Q168 202 140 202 Q112 202 74 198 Z"
-              fill="url(#shirt)"/>
-        <!-- shirt collar / neck V -->
-        <path d="M128 114 Q140 126 152 114" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="1.5"/>
-        <!-- shirt chest sheen -->
-        <path d="M98 132 Q110 128 125 132" fill="none" stroke="rgba(255,255,255,.25)" stroke-width="2.5" stroke-linecap="round"/>
-        <!-- small star / logo on shirt -->
-        <text x="130" y="168" font-size="18" text-anchor="middle" fill="rgba(255,255,255,.55)">✦</text>
-
-        <!-- ── WHITE BRIEFS ── -->
-        <path d="M90 240 Q90 234 140 232 Q190 234 190 240 L186 268 Q170 278 140 278 Q110 278 94 268 Z"
-              fill="url(#briefs)" stroke="rgba(180,200,255,.4)" stroke-width="1"/>
-        <!-- subtle fabric contour (stylized / artistic — no explicit depiction) -->
-        <path d="M126 244 Q134 256 140 258 Q146 256 154 244"
-              fill="none" stroke="rgba(160,180,220,.35)" stroke-width="1.5" stroke-linecap="round"/>
-        <!-- waistband -->
-        <rect x="90" y="238" width="100" height="8" rx="4" fill="rgba(140,170,240,.35)" stroke="rgba(200,215,255,.25)" stroke-width="1"/>
-
-        <!-- ── LEFT SHOULDER / UPPER ARM ── -->
-        <ellipse cx="76"  cy="148" rx="20" ry="18" fill="url(#skin)"/>
-        <!-- ── RIGHT SHOULDER ── -->
-        <ellipse cx="204" cy="148" rx="20" ry="18" fill="url(#skin)"/>
-        <!-- hands (simple rounded rectangles) -->
-        <rect x="58"  y="232" width="28" height="22" rx="10" fill="url(#skin)"/>
-        <rect x="194" y="232" width="28" height="22" rx="10" fill="url(#skin)"/>
-
-        <!-- ── NECK ── -->
-        <rect x="126" y="100" width="28" height="30" rx="8" fill="url(#skin)"/>
-
-        <!-- ── HEAD ── -->
-        <ellipse cx="140" cy="84" rx="44" ry="50" fill="url(#skin)"/>
-        <!-- chin definition -->
-        <path d="M118 110 Q140 124 162 110" fill="rgba(200,140,80,.15)" stroke="none"/>
-
-        <!-- ── PLATINUM BLOND HAIR ── -->
-        <!-- main mass -->
-        <path d="M96 56 Q98 20 140 16 Q182 20 184 56 Q180 40 160 38 Q140 36 120 38 Q100 40 96 56Z"
-              fill="url(#hair)"/>
-        <!-- flowing side locks -->
-        <path d="M96 56 Q82 70 84 95 Q96 64 100 58Z"  fill="url(#hair)" opacity=".9"/>
-        <path d="M184 56 Q198 70 196 95 Q184 64 180 58Z" fill="url(#hair)" opacity=".9"/>
-        <!-- top highlights -->
-        <path d="M118 22 Q130 18 138 20" fill="none" stroke="rgba(255,255,255,.85)" stroke-width="3" stroke-linecap="round"/>
-        <path d="M145 18 Q154 17 162 22" fill="none" stroke="rgba(255,255,255,.7)"  stroke-width="2" stroke-linecap="round"/>
-        <!-- glowing tips / shine -->
-        <circle cx="112" cy="28" r="4" fill="white" opacity=".6"/>
-        <circle cx="166" cy="26" r="3" fill="white" opacity=".5"/>
-        <!-- spiky texture strands -->
-        <path d="M128 18 L122 6 L132 16" fill="url(#hair)" stroke="rgba(200,230,255,.5)" stroke-width=".5"/>
-        <path d="M140 16 L138 2 L144 14" fill="url(#hair)" stroke="rgba(200,230,255,.5)" stroke-width=".5"/>
-        <path d="M152 18 L158 5  L150 16" fill="url(#hair)" stroke="rgba(200,230,255,.5)" stroke-width=".5"/>
-
-        <!-- ── FACE FEATURES ── -->
-        <!-- eyebrows (arched, confident) -->
-        <path d="M116 70 Q126 64 136 68" fill="none" stroke="rgba(180,140,80,.7)" stroke-width="2.5" stroke-linecap="round"/>
-        <path d="M144 68 Q154 64 164 70" fill="none" stroke="rgba(180,140,80,.7)" stroke-width="2.5" stroke-linecap="round"/>
-
-        <!-- EYES — emerald green, playful stare -->
-        <ellipse cx="126" cy="82" rx="11" ry="9" fill="white"/>
-        <ellipse cx="154" cy="82" rx="11" ry="9" fill="white"/>
-        <!-- iris — emerald -->
-        <circle cx="126" cy="82" r="7.5" fill="#00c060" filter="url(#em-glow)"/>
-        <circle cx="154" cy="82" r="7.5" fill="#00c060" filter="url(#em-glow)"/>
-        <!-- pupil -->
-        <circle cx="126" cy="82" r="4" fill="#003316"/>
-        <circle cx="154" cy="82" r="4" fill="#003316"/>
-        <!-- eye catch-light (confident gleam) -->
-        <circle cx="129" cy="79" r="2.2" fill="white" opacity=".9"/>
-        <circle cx="157" cy="79" r="2.2" fill="white" opacity=".9"/>
-        <!-- second smaller catchlight -->
-        <circle cx="122" cy="85" r="1" fill="white" opacity=".5"/>
-        <circle cx="150" cy="85" r="1" fill="white" opacity=".5"/>
-        <!-- eyelashes (simple lines) -->
-        <path d="M115 76 L112 73" stroke="rgba(80,50,20,.6)" stroke-width="1.2"/>
-        <path d="M115 80 L111 79" stroke="rgba(80,50,20,.6)" stroke-width="1.2"/>
-        <path d="M165 76 L168 73" stroke="rgba(80,50,20,.6)" stroke-width="1.2"/>
-        <path d="M165 80 L169 79" stroke="rgba(80,50,20,.6)" stroke-width="1.2"/>
-
-        <!-- nose -->
-        <path d="M136 90 Q140 96 144 90" fill="none" stroke="rgba(160,100,40,.35)" stroke-width="1.5" stroke-linecap="round"/>
-
-        <!-- smirk / playful smile -->
-        <path d="M128 102 Q140 110 154 103" fill="none" stroke="rgba(160,80,40,.55)" stroke-width="2" stroke-linecap="round"/>
-
-        <!-- ear studs (detail) -->
-        <circle cx="97"  cy="85" r="4" fill="url(#skin)"/>
-        <circle cx="97"  cy="85" r="2" fill="#ffd700" opacity=".8"/>
-        <circle cx="183" cy="85" r="4" fill="url(#skin)"/>
-        <circle cx="183" cy="85" r="2" fill="#ffd700" opacity=".8"/>
-
-        <!-- ── NECK CHAIN DETAIL ── -->
-        <path d="M122 116 Q140 122 158 116" fill="none" stroke="rgba(255,215,0,.5)" stroke-width="1.5" stroke-linecap="round"/>
-
-        <!-- ── SPARKLING GLOW STARS around character ── -->
-        <g fill="#00e87a" opacity=".7">
-          <polygon points="40,90  42,96  48,96  43,100  45,106  40,102  35,106  37,100  32,96  38,96" transform="scale(.6) translate(28,80)"/>
-          <polygon points="230,60 232,66 238,66 233,70 235,76 230,72 225,76 227,70 222,66 228,66" transform="scale(.5) translate(180,30)"/>
-        </g>
-        <g fill="#4a7fff" opacity=".5">
-          <polygon points="252,180 253,185 258,185 254,188 256,193 252,190 248,193 250,188 246,185 251,185" transform="scale(.6) translate(168,96)"/>
-        </g>
-        <g fill="#ff2d55" opacity=".4">
-          <polygon points="22,200 23,205 28,205 24,208 26,213 22,210 18,213 20,208 16,205 21,205" transform="scale(.5) translate(10,170)"/>
-        </g>
-      </svg>
+      <img class="char-img" src="heuy.png" alt="Heuy the Asexual Hero" />
     </div>
-    <!-- end char-wrap -->
 
     <!-- ── TITLE ── -->
     <div class="glitch-wrap" data-text="$HEUY">
       <h1 class="hero-title">$HEUY</h1>
     </div>
-    <p class="hero-sub">Heuy Asexual Token &nbsp;·&nbsp; Solana</p>
+    <p class="hero-sub">Heuy Asexual Token &nbsp;·&nbsp; World Chain &nbsp;·&nbsp; <span style="color:var(--emerald)">Born on Puf</span></p>
 
     <p class="tagline-box">
       <em style="font-style:normal">
@@ -870,7 +668,7 @@
     <div class="stat">
       <div class="stat-lbl">Chain</div>
       <div class="stat-val">
-        <span class="pill">◎ Solana</span>
+        <span class="pill">🌐 World Chain</span>
       </div>
     </div>
 
@@ -1047,38 +845,52 @@
       <button class="copy-btn" id="copy-ca-btn" onclick="copyCA()">Copy CA</button>
     </div>
 
+    <!-- Puf origin banner -->
+    <div style="display:flex;align-items:center;justify-content:center;gap:12px;
+                background:rgba(0,232,122,.07);border:1px solid rgba(0,232,122,.25);
+                border-radius:14px;padding:14px 24px;margin-bottom:28px;flex-wrap:wrap;">
+      <span style="font-size:1.4rem;">🐡</span>
+      <span style="font-size:.85rem;color:var(--off);">
+        <strong style="color:var(--emerald)">$HEUY</strong> was born on
+        <a href="https://puf.fun" target="_blank" rel="noopener"
+           style="color:var(--emerald);font-weight:700;text-decoration:underline;">Puf</a>
+        — the meme coin launch DApp on <strong style="color:var(--white)">World Chain</strong>.
+        Fair launch. No presale. No team tokens.
+      </span>
+    </div>
+
     <!-- Exchange Buttons -->
     <div class="buy-buttons">
-      <a href="https://raydium.io" target="_blank" rel="noopener" class="exch-btn exch-raydium">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path fill="rgba(255,255,255,.3)" d="M8 8h8v8H8z"/></svg>
-        Raydium
-      </a>
-      <a href="https://pump.fun" target="_blank" rel="noopener" class="exch-btn exch-pump">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-        Pump.fun
+      <a href="https://puf.fun" target="_blank" rel="noopener" class="exch-btn exch-pump">
+        <span style="font-size:1.2rem;">🐡</span>
+        Puf (World Chain)
       </a>
       <a href="https://dexscreener.com" target="_blank" rel="noopener" class="exch-btn exch-dex">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><polyline points="9 15 12 9 15 15"/></svg>
         DexScreener
+      </a>
+      <a href="https://uniswap.org" target="_blank" rel="noopener" class="exch-btn exch-raydium">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path fill="rgba(255,255,255,.3)" d="M9 7l6 5-6 5V7z"/></svg>
+        Uniswap
       </a>
     </div>
 
     <!-- How to buy steps -->
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;margin-bottom:36px;">
       <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 16px;text-align:center;">
-        <div style="font-size:1.8rem;margin-bottom:10px;">🔑</div>
-        <div style="font-family:'Orbitron',monospace;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">1. Get a wallet</div>
-        <div style="font-size:.75rem;color:var(--muted);">Phantom or Solflare. Takes 2 minutes.</div>
+        <div style="font-size:1.8rem;margin-bottom:10px;">🌐</div>
+        <div style="font-family:'Orbitron',monospace;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">1. Get World ID</div>
+        <div style="font-size:.75rem;color:var(--muted);">Verify with World ID via the World App. Takes 2 minutes.</div>
       </div>
       <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 16px;text-align:center;">
-        <div style="font-size:1.8rem;margin-bottom:10px;">◎</div>
-        <div style="font-family:'Orbitron',monospace;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">2. Get SOL</div>
-        <div style="font-size:.75rem;color:var(--muted);">Buy SOL on any exchange and bridge it to Solana.</div>
+        <div style="font-size:1.8rem;margin-bottom:10px;">💰</div>
+        <div style="font-family:'Orbitron',monospace;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">2. Fund Wallet</div>
+        <div style="font-size:.75rem;color:var(--muted);">Bridge ETH or USDC to World Chain via the World App.</div>
       </div>
       <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 16px;text-align:center;">
-        <div style="font-size:1.8rem;margin-bottom:10px;">🔄</div>
-        <div style="font-family:'Orbitron',monospace;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">3. Swap for $HEUY</div>
-        <div style="font-size:.75rem;color:var(--muted);">Paste the CA on Raydium or Pump.fun and swap.</div>
+        <div style="font-size:1.8rem;margin-bottom:10px;">🐡</div>
+        <div style="font-family:'Orbitron',monospace;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">3. Buy on Puf</div>
+        <div style="font-size:.75rem;color:var(--muted);">Go to Puf, paste the CA, and swap for $HEUY.</div>
       </div>
       <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 16px;text-align:center;">
         <div style="font-size:1.8rem;margin-bottom:10px;">🫡</div>
@@ -1117,9 +929,20 @@
   </div>
 
   <div class="footer-logo">$HEUY</div>
+  <!-- Puf / World Chain credit -->
+  <div style="display:inline-flex;align-items:center;gap:8px;
+              background:rgba(0,232,122,.06);border:1px solid rgba(0,232,122,.2);
+              border-radius:50px;padding:7px 18px;margin-bottom:20px;font-size:.8rem;">
+    <span>🐡</span>
+    <span style="color:var(--muted)">Born on</span>
+    <a href="https://puf.fun" target="_blank" rel="noopener"
+       style="color:var(--emerald);font-weight:700;text-decoration:none;">Puf</a>
+    <span style="color:var(--muted)">·</span>
+    <span style="color:var(--off);font-weight:600">World Chain</span>
+  </div>
   <p class="footer-fine">
     © 2025 Heuy Asexual Token. All rights not reserved — this is a meme.<br/>
-    $HEUY is a satirical meme coin on Solana. Not financial advice. Not investment advice.<br/>
+    $HEUY is a satirical meme coin on World Chain, launched via Puf. Not financial advice. Not investment advice.<br/>
     <a href="#">Terms</a> &nbsp;·&nbsp; <a href="#">Privacy</a>
   </p>
 </footer>
