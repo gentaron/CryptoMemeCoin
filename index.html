@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="$HEUY – Heuy Asexual Token on Solana. The village hero who defeats gangs... but never gets hard. Eternal tease. Zero release." />
+  <meta property="og:title" content="$HEUY – Heuy Asexual Token | Solana" />
+  <meta property="og:description" content="The eternally flaccid hero of Solana. Community-driven. Maximum thirst-trap vibes." />
+  <title>$HEUY – Heuy Asexual Token | Solana Meme Coin</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── TOKENS ─────────────────────────────────────────────── */
+    :root {
+      --deep:       #06091f;
+      --navy:       #0d1340;
+      --blue-mid:   #1a2060;
+      --blue:       #3a5fd9;
+      --glow:       #4a7fff;
+      --emerald:    #00e87a;
+      --em-glow:    #00ff99;
+      --red:        #ff2d55;
+      --red-light:  #ff6680;
+      --white:      #ffffff;
+      --off:        #d8e4ff;
+      --muted:      #6a80b0;
+      --card:       rgba(15,22,70,0.85);
+      --border:     rgba(74,127,255,0.25);
+      --border-em:  rgba(0,232,122,0.3);
+    }
+
+    /* ─── RESET ──────────────────────────────────────────────── */
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--deep);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* ─── AMBIENT BACKGROUND ─────────────────────────────────── */
+    .ambient {
+      position: fixed; inset: 0; pointer-events: none; z-index: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 15% 50%,  rgba(58,95,217,.18) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 40% at 85% 20%,  rgba(0,232,122,.12) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 35% at 55% 85%,  rgba(255,45,85,.10) 0%, transparent 60%);
+    }
+
+    /* ─── FLOATING PARTICLES ─────────────────────────────────── */
+    #particles { position:fixed; inset:0; pointer-events:none; z-index:1; overflow:hidden; }
+    .pt {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0;
+      animation: ptfloat linear infinite;
+    }
+    @keyframes ptfloat {
+      0%   { opacity:0; transform:translateY(105vh) scale(.5); }
+      8%   { opacity:.7; }
+      90%  { opacity:.3; }
+      100% { opacity:0; transform:translateY(-80px) scale(2.5); }
+    }
+
+    /* ─── NAV ────────────────────────────────────────────────── */
+    nav {
+      position: fixed; top:0; width:100%; z-index:200;
+      display: flex; align-items:center; justify-content:space-between;
+      padding: 14px 32px;
+      background: rgba(6,9,31,.88);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      font-family: 'Orbitron', monospace;
+      font-weight: 900; font-size: 1.15rem;
+      background: linear-gradient(120deg, #fff 0%, var(--glow) 50%, var(--emerald) 100%);
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .nav-links { display:flex; gap:28px; align-items:center; }
+    .nav-links a {
+      color:var(--muted); text-decoration:none; font-size:.88rem;
+      transition:color .25s;
+    }
+    .nav-links a:hover { color:var(--emerald); }
+    .nav-cta {
+      background: linear-gradient(135deg, var(--red), var(--red-light)) !important;
+      color: #fff !important;
+      padding: 9px 22px; border-radius:50px;
+      font-weight:700; font-size:.82rem !important;
+      letter-spacing:1px; text-transform:uppercase;
+      box-shadow: 0 0 22px rgba(255,45,85,.45);
+      transition: transform .25s, box-shadow .25s !important;
+    }
+    .nav-cta:hover {
+      transform:scale(1.06) !important;
+      box-shadow:0 0 36px rgba(255,45,85,.75) !important;
+      color:#fff !important;
+    }
+
+    /* ─── TICKER TAPE ────────────────────────────────────────── */
+    .ticker {
+      position:relative; z-index:2;
+      background: linear-gradient(90deg, #ff1a40, #c0002d);
+      padding:10px 0; overflow:hidden;
+      margin-top:60px;
+    }
+    .ticker-track {
+      display:flex; gap:60px;
+      animation: scrollticker 22s linear infinite;
+      white-space:nowrap; width:max-content;
+    }
+    .ticker-track span {
+      font-family:'Orbitron',monospace;
+      font-size:.75rem; font-weight:700;
+      letter-spacing:1.5px; text-transform:uppercase;
+      color:#fff;
+    }
+    @keyframes scrollticker {
+      from { transform:translateX(0); }
+      to   { transform:translateX(-50%); }
+    }
+
+    /* ─── HERO ───────────────────────────────────────────────── */
+    .hero {
+      position:relative; z-index:2;
+      min-height:calc(100vh - 60px);
+      display:flex; align-items:center; justify-content:center;
+      padding: 60px 24px 80px;
+      overflow:hidden;
+    }
+    .hero-gradient {
+      position:absolute; inset:0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 100%, rgba(26,32,96,.9) 0%, transparent 60%),
+        linear-gradient(180deg, var(--deep) 0%, #0b1038 60%, var(--deep) 100%);
+    }
+
+    /* subtle palace/bioluminescent grid lines */
+    .hero-grid {
+      position:absolute; inset:0;
+      background-image:
+        linear-gradient(rgba(74,127,255,.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(74,127,255,.06) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    .hero-inner {
+      position:relative; z-index:3;
+      display:flex; flex-direction:column; align-items:center;
+      text-align:center; gap:28px; max-width:960px;
+    }
+
+    .hero-badge {
+      display:inline-flex; align-items:center; gap:8px;
+      background: rgba(0,232,122,.08);
+      border:1px solid var(--border-em);
+      border-radius:50px; padding:6px 18px;
+      font-size:.72rem; color:var(--emerald);
+      text-transform:uppercase; letter-spacing:2.5px; font-weight:600;
+    }
+
+    /* ── CHARACTER SVG WRAPPER ── */
+    .char-wrap {
+      position:relative; width:280px; height:420px;
+    }
+    .char-halo {
+      position:absolute; inset:-40px; border-radius:50%;
+      background: radial-gradient(ellipse, rgba(74,127,255,.25) 0%, rgba(0,232,122,.08) 40%, transparent 70%);
+      animation: halo-pulse 3.5s ease-in-out infinite;
+    }
+    @keyframes halo-pulse {
+      0%,100% { transform:scale(1);   opacity:.6; }
+      50%      { transform:scale(1.12); opacity:1; }
+    }
+    .char-svg {
+      position:relative; width:100%; height:100%;
+      filter: drop-shadow(0 0 28px rgba(74,127,255,.55))
+              drop-shadow(0 0 8px  rgba(0,232,122,.3));
+      animation: hero-float 4s ease-in-out infinite;
+    }
+    @keyframes hero-float {
+      0%,100% { transform:translateY(0px); }
+      50%      { transform:translateY(-14px); }
+    }
+
+    /* ── TITLE ── */
+    .hero-title {
+      font-family:'Orbitron', monospace;
+      font-size:clamp(2.8rem,8vw,5.5rem);
+      font-weight:900; line-height:1.05;
+      background: linear-gradient(135deg, #ffffff 0%, var(--glow) 45%, var(--emerald) 100%);
+      -webkit-background-clip:text; background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+    .hero-sub {
+      font-size:clamp(1rem,2.8vw,1.35rem);
+      color:var(--off); font-weight:300; letter-spacing:.4px;
+    }
+
+    .tagline-box {
+      display:inline-block;
+      background: rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.1);
+      border-radius:14px; padding:18px 28px;
+      max-width:680px;
+      font-size:clamp(.9rem,2.2vw,1.1rem);
+      color:var(--off); font-style:italic;
+    }
+    .tagline-box .no-pump { color:var(--red); font-weight:700; font-style:normal; }
+    .tagline-box .gem     { color:var(--emerald); font-style:normal; }
+
+    .hero-cta { display:flex; gap:14px; flex-wrap:wrap; justify-content:center; }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--red), var(--red-light));
+      color:#fff; padding:17px 44px; border-radius:50px;
+      text-decoration:none; font-weight:800; font-size:1.1rem;
+      text-transform:uppercase; letter-spacing:2px;
+      box-shadow: 0 6px 32px rgba(255,45,85,.55);
+      transition:all .3s; border:none; cursor:pointer;
+      display:inline-flex; align-items:center; gap:10px;
+    }
+    .btn-primary:hover { transform:translateY(-4px) scale(1.06); box-shadow:0 12px 44px rgba(255,45,85,.8); }
+
+    .btn-outline {
+      background:transparent; color:var(--glow);
+      padding:17px 36px; border-radius:50px;
+      text-decoration:none; font-weight:700; font-size:1rem;
+      text-transform:uppercase; letter-spacing:1.5px;
+      border:2px solid var(--glow); transition:all .3s;
+    }
+    .btn-outline:hover {
+      background:rgba(74,127,255,.14);
+      transform:translateY(-4px);
+      box-shadow:0 8px 30px rgba(74,127,255,.35);
+    }
+
+    .scroll-hint {
+      position:absolute; bottom:28px; left:50%; transform:translateX(-50%);
+      display:flex; flex-direction:column; align-items:center; gap:8px;
+      color:var(--muted); font-size:.7rem; letter-spacing:1px; text-transform:uppercase;
+      animation:bounceY 2.2s ease-in-out infinite;
+    }
+    .scroll-hint svg { opacity:.6; }
+    @keyframes bounceY {
+      0%,100% { transform:translateX(-50%) translateY(0); }
+      50%      { transform:translateX(-50%) translateY(7px); }
+    }
+
+    /* ─── STATS BAR ──────────────────────────────────────────── */
+    .stats-bar {
+      position:relative; z-index:2;
+      background:linear-gradient(135deg,rgba(13,19,64,.97),rgba(6,9,31,.98));
+      border-top:1px solid var(--border); border-bottom:1px solid var(--border);
+      padding:28px 24px;
+    }
+    .stats-grid {
+      max-width:1100px; margin:0 auto;
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+      gap:20px;
+    }
+    .stat {
+      text-align:center; padding:16px;
+      border-right:1px solid var(--border);
+    }
+    .stat:last-child { border-right:none; }
+    .stat-lbl {
+      font-size:.65rem; text-transform:uppercase; letter-spacing:2.5px;
+      color:var(--muted); margin-bottom:8px;
+    }
+    .stat-val {
+      font-family:'Orbitron',monospace; font-size:.8rem; font-weight:700;
+      color:var(--emerald); word-break:break-all; line-height:1.4;
+    }
+    .pill {
+      display:inline-block;
+      background:rgba(0,232,122,.12); border:1px solid var(--border-em);
+      color:var(--emerald); padding:4px 14px; border-radius:50px;
+      font-size:.78rem; font-weight:700;
+    }
+    .pill-red {
+      background:rgba(255,45,85,.12); border-color:rgba(255,45,85,.35);
+      color:var(--red-light);
+    }
+
+    /* ─── SHARED SECTION ─────────────────────────────────────── */
+    .section { position:relative; z-index:2; padding:90px 24px; }
+    .section-inner { max-width:1100px; margin:0 auto; }
+    .eyebrow {
+      display:inline-block; color:var(--emerald);
+      font-size:.7rem; text-transform:uppercase;
+      letter-spacing:3.5px; font-weight:700; margin-bottom:12px;
+    }
+    .section-h {
+      font-family:'Orbitron',monospace;
+      font-size:clamp(1.7rem,4vw,2.8rem);
+      font-weight:700; margin-bottom:28px;
+    }
+
+    /* ─── ABOUT CARD ─────────────────────────────────────────── */
+    .about-card {
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:22px; padding:44px;
+      backdrop-filter:blur(12px);
+      position:relative; overflow:hidden;
+    }
+    .about-card::before {
+      content:'';
+      position:absolute; top:0; left:0; right:0; height:3px;
+      background:linear-gradient(90deg,var(--red),var(--glow),var(--emerald));
+    }
+    .about-text {
+      font-size:1.05rem; line-height:1.9; color:var(--off); font-weight:300;
+    }
+    .about-text strong { color:var(--emerald); font-weight:700; }
+    .about-text em { color:var(--red-light); font-style:normal; font-weight:600; }
+
+    /* ─── FEATURES ───────────────────────────────────────────── */
+    .features-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+      gap:20px; margin-top:44px;
+    }
+    .feat-card {
+      background:var(--card); border:1px solid var(--border);
+      border-radius:18px; padding:30px 26px;
+      text-align:center; transition:all .3s;
+      position:relative; overflow:hidden;
+    }
+    .feat-card::after {
+      content:'';
+      position:absolute; inset:0;
+      background:radial-gradient(ellipse 80% 60% at 50% 110%, rgba(0,232,122,.06) 0%, transparent 70%);
+      opacity:0; transition:opacity .3s;
+    }
+    .feat-card:hover { transform:translateY(-8px); border-color:var(--emerald); }
+    .feat-card:hover::after { opacity:1; }
+    .feat-card:hover { box-shadow:0 16px 50px rgba(0,232,122,.15); }
+
+    .feat-icon { font-size:2.8rem; display:block; margin-bottom:16px; }
+    .feat-title {
+      font-family:'Orbitron',monospace; font-size:.82rem; font-weight:700;
+      color:var(--white); text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;
+    }
+    .feat-desc { font-size:.8rem; color:var(--muted); line-height:1.55; }
+
+    /* ─── MEME GALLERY ───────────────────────────────────────── */
+    .meme-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
+      gap:20px; margin-top:44px;
+    }
+    .meme-card {
+      background:var(--card); border:1px solid var(--border);
+      border-radius:18px; overflow:hidden; transition:all .3s;
+    }
+    .meme-card:hover {
+      transform:translateY(-6px) scale(1.02);
+      box-shadow:0 20px 55px rgba(74,127,255,.22);
+      border-color:var(--glow);
+    }
+    .meme-visual {
+      aspect-ratio:4/3;
+      display:flex; flex-direction:column;
+      align-items:center; justify-content:center;
+      gap:12px; padding:20px;
+      font-size:3rem; text-align:center;
+      position:relative; overflow:hidden;
+    }
+    .meme-bg-1 { background:linear-gradient(135deg,#0d1340,#1a2060); }
+    .meme-bg-2 { background:linear-gradient(135deg,#1a0620,#3d0a2e); }
+    .meme-bg-3 { background:linear-gradient(135deg,#041a0f,#083d22); }
+    .meme-bg-4 { background:linear-gradient(135deg,#1a1006,#3d2800); }
+    .meme-bg-5 { background:linear-gradient(135deg,#0d0630,#1a1060); }
+    .meme-bg-6 { background:linear-gradient(135deg,#1a0606,#3d0d0d); }
+
+    .meme-top-text {
+      font-family:'Orbitron',monospace;
+      font-size:.65rem; font-weight:700; text-transform:uppercase;
+      letter-spacing:2px; color:rgba(255,255,255,.5);
+      position:absolute; top:12px; left:0; right:0; text-align:center;
+    }
+    .meme-emoji { font-size:3.8rem; line-height:1; }
+    .meme-label {
+      font-family:'Orbitron',monospace; font-size:.7rem; font-weight:700;
+      text-transform:uppercase; letter-spacing:1px;
+      padding:4px 14px; border-radius:50px;
+      background:rgba(255,255,255,.08);
+    }
+    .meme-bar {
+      background:rgba(0,0,0,.7); border-top:1px solid var(--border);
+      padding:14px 18px;
+    }
+    .meme-caption {
+      font-size:.88rem; font-weight:700; color:var(--white); text-align:center;
+    }
+    .meme-cap-sub {
+      font-size:.7rem; color:var(--muted); text-align:center; margin-top:4px;
+    }
+
+    /* ─── BUY SECTION ────────────────────────────────────────── */
+    .buy-section {
+      position:relative; z-index:2;
+      background:linear-gradient(135deg,rgba(13,19,64,.9),rgba(6,9,31,.98));
+      border-top:1px solid var(--border); border-bottom:1px solid var(--border);
+      padding:90px 24px;
+    }
+    .buy-inner { max-width:860px; margin:0 auto; text-align:center; }
+    .buy-inner .section-h { margin-bottom:10px; }
+    .buy-sub {
+      color:var(--muted); font-size:1rem; margin-bottom:40px;
+    }
+    .buy-buttons {
+      display:flex; flex-wrap:wrap; gap:16px; justify-content:center;
+      margin-bottom:44px;
+    }
+    .exch-btn {
+      display:inline-flex; align-items:center; gap:10px;
+      padding:16px 34px; border-radius:14px;
+      text-decoration:none; font-weight:700; font-size:.98rem;
+      text-transform:uppercase; letter-spacing:1px;
+      transition:all .3s; border:2px solid transparent;
+    }
+    .exch-raydium {
+      background:linear-gradient(135deg,#6b21a8,#9333ea);
+      color:#fff; box-shadow:0 6px 30px rgba(147,51,234,.45);
+    }
+    .exch-raydium:hover { transform:translateY(-5px); box-shadow:0 12px 44px rgba(147,51,234,.75); }
+
+    .exch-pump {
+      background:linear-gradient(135deg,#065f46,#10b981);
+      color:#fff; box-shadow:0 6px 30px rgba(16,185,129,.45);
+    }
+    .exch-pump:hover { transform:translateY(-5px); box-shadow:0 12px 44px rgba(16,185,129,.75); }
+
+    .exch-dex {
+      background:linear-gradient(135deg,#92400e,#f59e0b);
+      color:#fff; box-shadow:0 6px 30px rgba(245,158,11,.45);
+    }
+    .exch-dex:hover { transform:translateY(-5px); box-shadow:0 12px 44px rgba(245,158,11,.75); }
+
+    /* contract box */
+    .contract-box {
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px; flex-wrap:wrap;
+      background:rgba(0,232,122,.05); border:1px solid var(--border-em);
+      border-radius:14px; padding:20px 28px; margin-bottom:28px;
+    }
+    .contract-box-left { text-align:left; }
+    .contract-lbl { font-size:.65rem; text-transform:uppercase; letter-spacing:2.5px; color:var(--emerald); margin-bottom:5px; }
+    .contract-addr {
+      font-family:'Orbitron',monospace; font-size:.72rem;
+      color:var(--white); word-break:break-all;
+    }
+    .copy-btn {
+      background:rgba(0,232,122,.15); border:1px solid var(--border-em);
+      color:var(--emerald); padding:10px 22px; border-radius:10px;
+      cursor:pointer; font-size:.8rem; font-weight:700;
+      transition:all .3s; white-space:nowrap; letter-spacing:.5px;
+    }
+    .copy-btn:hover { background:rgba(0,232,122,.28); transform:scale(1.04); }
+    .copy-btn.copied { background:rgba(0,232,122,.35); color:#fff; }
+
+    /* disclaimer */
+    .disclaimer {
+      background:rgba(255,45,85,.05); border:1px solid rgba(255,45,85,.2);
+      border-radius:12px; padding:18px 24px;
+      font-size:.72rem; color:var(--muted); line-height:1.65; text-align:center;
+    }
+    .disclaimer strong { color:var(--red-light); }
+
+    /* ─── FOOTER ─────────────────────────────────────────────── */
+    footer {
+      position:relative; z-index:2;
+      padding:70px 24px 40px;
+      text-align:center;
+    }
+    .social-row { display:flex; justify-content:center; gap:18px; margin-bottom:44px; flex-wrap:wrap; }
+    .soc-btn {
+      display:inline-flex; align-items:center; gap:10px;
+      padding:13px 30px; border-radius:50px;
+      text-decoration:none; font-weight:700; font-size:.9rem;
+      transition:all .3s; border:2px solid;
+    }
+    .soc-x   { border-color:#1d9bf0; color:#1d9bf0; }
+    .soc-tg  { border-color:#2aabee; color:#2aabee; }
+    .soc-x:hover  { background:rgba(29,155,240,.12); box-shadow:0 6px 24px rgba(29,155,240,.35); transform:translateY(-4px); }
+    .soc-tg:hover { background:rgba(42,171,238,.12); box-shadow:0 6px 24px rgba(42,171,238,.35); transform:translateY(-4px); }
+
+    .footer-logo {
+      font-family:'Orbitron',monospace; font-size:1.6rem; font-weight:900;
+      background:linear-gradient(135deg, var(--glow), var(--emerald));
+      -webkit-background-clip:text; background-clip:text;
+      -webkit-text-fill-color:transparent;
+      margin-bottom:12px;
+    }
+    .footer-fine {
+      font-size:.75rem; color:var(--muted); max-width:600px; margin:0 auto;
+      line-height:1.65;
+    }
+    .footer-fine a { color:var(--muted); text-decoration:underline; }
+
+    /* ─── RESPONSIVE ─────────────────────────────────────────── */
+    @media (max-width:768px) {
+      nav { padding:12px 16px; }
+      .nav-links a:not(.nav-cta) { display:none; }
+      .hero { padding:40px 16px 70px; }
+      .char-wrap { width:210px; height:315px; }
+      .about-card { padding:26px 20px; }
+      .stat { border-right:none; border-bottom:1px solid var(--border); }
+      .stat:last-child { border-bottom:none; }
+      .contract-box { flex-direction:column; text-align:center; }
+      .contract-box-left { text-align:center; }
+    }
+
+    /* ─── GLITCH ─────────────────────────────────────────────── */
+    .glitch-wrap { position:relative; display:inline-block; }
+    .glitch-wrap::before,
+    .glitch-wrap::after {
+      content: attr(data-text);
+      position:absolute; inset:0;
+      font-family:'Orbitron',monospace;
+      font-size:inherit; font-weight:900;
+      pointer-events:none;
+    }
+    .glitch-wrap::before {
+      background:linear-gradient(135deg,var(--red),transparent);
+      -webkit-background-clip:text; background-clip:text;
+      -webkit-text-fill-color:transparent;
+      animation:glitch1 5.5s infinite;
+    }
+    .glitch-wrap::after {
+      background:linear-gradient(135deg,var(--emerald),transparent);
+      -webkit-background-clip:text; background-clip:text;
+      -webkit-text-fill-color:transparent;
+      animation:glitch2 5.5s infinite;
+    }
+    @keyframes glitch1 {
+       0%,85%,100% { opacity:0; clip-path:none; transform:none; }
+      86% { opacity:.8; clip-path:polygon(0 15%,100% 15%,100% 22%,0 22%); transform:translate(-4px,0); }
+      88% { opacity:.8; clip-path:polygon(0 60%,100% 60%,100% 65%,0 65%); transform:translate( 4px,0); }
+      90% { opacity:0; }
+    }
+    @keyframes glitch2 {
+       0%,87%,100% { opacity:0; clip-path:none; transform:none; }
+      88% { opacity:.7; clip-path:polygon(0 40%,100% 40%,100% 48%,0 48%); transform:translate(3px,0); }
+      90% { opacity:.7; clip-path:polygon(0 5%,100%  5%,100% 10%,0 10%); transform:translate(-3px,0); }
+      92% { opacity:0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Ambient glow layers -->
+<div class="ambient" aria-hidden="true"></div>
+<div id="particles" aria-hidden="true"></div>
+
+<!-- ═══════════════════════════════════════════════
+     NAV
+════════════════════════════════════════════════ -->
+<nav>
+  <div class="nav-logo">$HEUY</div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#buy">How to Buy</a>
+    <a href="#memes">Memes</a>
+    <a href="https://twitter.com" target="_blank" rel="noopener">X</a>
+    <a href="#buy" class="nav-cta">Buy $HEUY</a>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════
+     TICKER TAPE
+════════════════════════════════════════════════ -->
+<div class="ticker" aria-label="Ticker">
+  <div class="ticker-track" id="ticker-track">
+    <span>💎 $HEUY TO THE MOON</span>
+    <span>🚫🍆 NO PUMP JUST VIBES</span>
+    <span>⚔️ VILLAGE HERO</span>
+    <span>♾️ ETERNALLY FLACCID</span>
+    <span>🔥 FAIR LAUNCH</span>
+    <span>🔥 LP BURNED</span>
+    <span>🏆 OWNERSHIP RENOUNCED</span>
+    <span>💎 $HEUY TO THE MOON</span>
+    <span>🚫🍆 NO PUMP JUST VIBES</span>
+    <span>⚔️ VILLAGE HERO</span>
+    <span>♾️ ETERNALLY FLACCID</span>
+    <span>🔥 FAIR LAUNCH</span>
+    <span>🔥 LP BURNED</span>
+    <span>🏆 OWNERSHIP RENOUNCED</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     HERO
+════════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-gradient"></div>
+  <div class="hero-grid"></div>
+
+  <div class="hero-inner">
+
+    <div class="hero-badge">
+      <svg width="8" height="8" viewBox="0 0 8 8" fill="none"><circle cx="4" cy="4" r="4" fill="#00e87a"/></svg>
+      Now live on Solana &nbsp;·&nbsp; Fair Launch
+    </div>
+
+    <!-- ── Heuy Character SVG Illustration ── -->
+    <div class="char-wrap">
+      <div class="char-halo"></div>
+      <svg class="char-svg" viewBox="0 0 280 420" xmlns="http://www.w3.org/2000/svg" aria-label="Heuy the Asexual Hero">
+        <defs>
+          <!-- Skin gradient -->
+          <linearGradient id="skin" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%"   stop-color="#f5c8a0"/>
+            <stop offset="100%" stop-color="#e8a870"/>
+          </linearGradient>
+          <!-- Platinum hair -->
+          <linearGradient id="hair" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%"   stop-color="#ffffff"/>
+            <stop offset="40%"  stop-color="#ddeeff"/>
+            <stop offset="100%" stop-color="#b8d4ff"/>
+          </linearGradient>
+          <!-- Blue crop-top -->
+          <linearGradient id="shirt" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%"   stop-color="#3a7bff"/>
+            <stop offset="100%" stop-color="#1a4bd9"/>
+          </linearGradient>
+          <!-- White briefs -->
+          <linearGradient id="briefs" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%"   stop-color="#e8f0ff"/>
+            <stop offset="100%" stop-color="#c0ccee"/>
+          </linearGradient>
+          <!-- Red cape -->
+          <linearGradient id="cape" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%"   stop-color="#ff4466"/>
+            <stop offset="100%" stop-color="#cc1133"/>
+          </linearGradient>
+          <!-- Tights -->
+          <linearGradient id="tights" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%"   stop-color="#1a2a7a"/>
+            <stop offset="50%"  stop-color="#3a55cc"/>
+            <stop offset="100%" stop-color="#1a2a7a"/>
+          </linearGradient>
+          <!-- Glow for eyes -->
+          <filter id="em-glow">
+            <feGaussianBlur stdDeviation="2" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <!-- Overall character shimmer -->
+          <filter id="char-glow">
+            <feGaussianBlur stdDeviation="4" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <!-- Rune pattern on sleeves -->
+          <pattern id="runes" x="0" y="0" width="12" height="14" patternUnits="userSpaceOnUse">
+            <text x="1" y="11" font-size="9" fill="rgba(74,127,255,.7)" font-family="serif">ᚱ</text>
+          </pattern>
+        </defs>
+
+        <!-- ── RED CAPE (behind body) ── -->
+        <path d="M90 120 Q40 160 30 300 Q28 340 60 360 Q90 370 110 340 L120 280 Q100 240 100 180 Z"
+              fill="url(#cape)" opacity=".92"/>
+        <path d="M92 122 Q50 160 42 280 Q45 310 62 330"
+              fill="none" stroke="rgba(255,255,255,.15)" stroke-width="1.5"/>
+        <!-- cape highlight sheen -->
+        <path d="M88 125 Q55 175 48 270" fill="none" stroke="rgba(255,200,200,.2)" stroke-width="3" stroke-linecap="round"/>
+
+        <!-- ── THIGH-HIGH TIGHTS (legs) ── -->
+        <!-- left leg -->
+        <path d="M108 260 L96 390 Q94 408 110 412 Q122 414 128 396 L132 270 Z"
+              fill="url(#tights)"/>
+        <!-- right leg -->
+        <path d="M148 260 L156 390 Q158 408 144 412 Q132 414 128 396 L128 270 Z"
+              fill="url(#tights)"/>
+        <!-- leg glossy highlight -->
+        <path d="M112 270 L102 375" fill="none" stroke="rgba(180,200,255,.3)" stroke-width="3" stroke-linecap="round"/>
+        <path d="M152 270 L150 375" fill="none" stroke="rgba(180,200,255,.3)" stroke-width="3" stroke-linecap="round"/>
+        <!-- knee accent rings -->
+        <ellipse cx="112" cy="330" rx="12" ry="5" fill="none" stroke="rgba(100,150,255,.5)" stroke-width="1.5"/>
+        <ellipse cx="148" cy="330" rx="12" ry="5" fill="none" stroke="rgba(100,150,255,.5)" stroke-width="1.5"/>
+        <!-- thigh-high top band -->
+        <rect x="94"  y="258" width="36" height="8" rx="4" fill="rgba(80,120,255,.6)" stroke="rgba(150,180,255,.4)" stroke-width="1"/>
+        <rect x="130" y="258" width="36" height="8" rx="4" fill="rgba(80,120,255,.6)" stroke="rgba(150,180,255,.4)" stroke-width="1"/>
+
+        <!-- ── ARM RUNE SLEEVES ── -->
+        <!-- left arm -->
+        <rect x="58"  y="160" width="36" height="78" rx="14" fill="url(#runes)" stroke="rgba(74,127,255,.4)" stroke-width="1"/>
+        <rect x="58"  y="160" width="36" height="78" rx="14" fill="rgba(20,40,120,.6)"/>
+        <rect x="58"  y="160" width="36" height="78" rx="14" fill="url(#runes)" opacity=".8"/>
+        <!-- right arm -->
+        <rect x="186" y="160" width="36" height="78" rx="14" fill="rgba(20,40,120,.6)" stroke="rgba(74,127,255,.4)" stroke-width="1"/>
+        <rect x="186" y="160" width="36" height="78" rx="14" fill="url(#runes)" opacity=".8"/>
+        <!-- rune glow accent dots -->
+        <circle cx="76"  cy="175" r="2" fill="#4a7fff" opacity=".7"/>
+        <circle cx="76"  cy="195" r="2" fill="#00e87a" opacity=".6"/>
+        <circle cx="76"  cy="215" r="2" fill="#4a7fff" opacity=".7"/>
+        <circle cx="204" cy="175" r="2" fill="#4a7fff" opacity=".7"/>
+        <circle cx="204" cy="195" r="2" fill="#00e87a" opacity=".6"/>
+        <circle cx="204" cy="215" r="2" fill="#4a7fff" opacity=".7"/>
+
+        <!-- ── TORSO BODY ── -->
+        <!-- skin exposed abs/navel strip -->
+        <rect x="88" y="196" width="104" height="46" rx="6" fill="url(#skin)"/>
+        <!-- ab definition lines (stylized) -->
+        <line x1="140" y1="198" x2="140" y2="240" stroke="rgba(140,80,30,.25)" stroke-width="1.5"/>
+        <line x1="100" y1="208" x2="180" y2="208" stroke="rgba(140,80,30,.2)" stroke-width="1"/>
+        <line x1="100" y1="222" x2="180" y2="222" stroke="rgba(140,80,30,.2)" stroke-width="1"/>
+        <!-- navel -->
+        <circle cx="140" cy="232" r="3.5" fill="rgba(120,65,20,.35)"/>
+
+        <!-- ── BLUE CROP TOP ── -->
+        <path d="M78 130 Q78 116 140 112 Q202 116 202 130 L206 198 Q168 202 140 202 Q112 202 74 198 Z"
+              fill="url(#shirt)"/>
+        <!-- shirt collar / neck V -->
+        <path d="M128 114 Q140 126 152 114" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="1.5"/>
+        <!-- shirt chest sheen -->
+        <path d="M98 132 Q110 128 125 132" fill="none" stroke="rgba(255,255,255,.25)" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- small star / logo on shirt -->
+        <text x="130" y="168" font-size="18" text-anchor="middle" fill="rgba(255,255,255,.55)">✦</text>
+
+        <!-- ── WHITE BRIEFS ── -->
+        <path d="M90 240 Q90 234 140 232 Q190 234 190 240 L186 268 Q170 278 140 278 Q110 278 94 268 Z"
+              fill="url(#briefs)" stroke="rgba(180,200,255,.4)" stroke-width="1"/>
+        <!-- subtle fabric contour (stylized / artistic — no explicit depiction) -->
+        <path d="M126 244 Q134 256 140 258 Q146 256 154 244"
+              fill="none" stroke="rgba(160,180,220,.35)" stroke-width="1.5" stroke-linecap="round"/>
+        <!-- waistband -->
+        <rect x="90" y="238" width="100" height="8" rx="4" fill="rgba(140,170,240,.35)" stroke="rgba(200,215,255,.25)" stroke-width="1"/>
+
+        <!-- ── LEFT SHOULDER / UPPER ARM ── -->
+        <ellipse cx="76"  cy="148" rx="20" ry="18" fill="url(#skin)"/>
+        <!-- ── RIGHT SHOULDER ── -->
+        <ellipse cx="204" cy="148" rx="20" ry="18" fill="url(#skin)"/>
+        <!-- hands (simple rounded rectangles) -->
+        <rect x="58"  y="232" width="28" height="22" rx="10" fill="url(#skin)"/>
+        <rect x="194" y="232" width="28" height="22" rx="10" fill="url(#skin)"/>
+
+        <!-- ── NECK ── -->
+        <rect x="126" y="100" width="28" height="30" rx="8" fill="url(#skin)"/>
+
+        <!-- ── HEAD ── -->
+        <ellipse cx="140" cy="84" rx="44" ry="50" fill="url(#skin)"/>
+        <!-- chin definition -->
+        <path d="M118 110 Q140 124 162 110" fill="rgba(200,140,80,.15)" stroke="none"/>
+
+        <!-- ── PLATINUM BLOND HAIR ── -->
+        <!-- main mass -->
+        <path d="M96 56 Q98 20 140 16 Q182 20 184 56 Q180 40 160 38 Q140 36 120 38 Q100 40 96 56Z"
+              fill="url(#hair)"/>
+        <!-- flowing side locks -->
+        <path d="M96 56 Q82 70 84 95 Q96 64 100 58Z"  fill="url(#hair)" opacity=".9"/>
+        <path d="M184 56 Q198 70 196 95 Q184 64 180 58Z" fill="url(#hair)" opacity=".9"/>
+        <!-- top highlights -->
+        <path d="M118 22 Q130 18 138 20" fill="none" stroke="rgba(255,255,255,.85)" stroke-width="3" stroke-linecap="round"/>
+        <path d="M145 18 Q154 17 162 22" fill="none" stroke="rgba(255,255,255,.7)"  stroke-width="2" stroke-linecap="round"/>
+        <!-- glowing tips / shine -->
+        <circle cx="112" cy="28" r="4" fill="white" opacity=".6"/>
+        <circle cx="166" cy="26" r="3" fill="white" opacity=".5"/>
+        <!-- spiky texture strands -->
+        <path d="M128 18 L122 6 L132 16" fill="url(#hair)" stroke="rgba(200,230,255,.5)" stroke-width=".5"/>
+        <path d="M140 16 L138 2 L144 14" fill="url(#hair)" stroke="rgba(200,230,255,.5)" stroke-width=".5"/>
+        <path d="M152 18 L158 5  L150 16" fill="url(#hair)" stroke="rgba(200,230,255,.5)" stroke-width=".5"/>
+
+        <!-- ── FACE FEATURES ── -->
+        <!-- eyebrows (arched, confident) -->
+        <path d="M116 70 Q126 64 136 68" fill="none" stroke="rgba(180,140,80,.7)" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M144 68 Q154 64 164 70" fill="none" stroke="rgba(180,140,80,.7)" stroke-width="2.5" stroke-linecap="round"/>
+
+        <!-- EYES — emerald green, playful stare -->
+        <ellipse cx="126" cy="82" rx="11" ry="9" fill="white"/>
+        <ellipse cx="154" cy="82" rx="11" ry="9" fill="white"/>
+        <!-- iris — emerald -->
+        <circle cx="126" cy="82" r="7.5" fill="#00c060" filter="url(#em-glow)"/>
+        <circle cx="154" cy="82" r="7.5" fill="#00c060" filter="url(#em-glow)"/>
+        <!-- pupil -->
+        <circle cx="126" cy="82" r="4" fill="#003316"/>
+        <circle cx="154" cy="82" r="4" fill="#003316"/>
+        <!-- eye catch-light (confident gleam) -->
+        <circle cx="129" cy="79" r="2.2" fill="white" opacity=".9"/>
+        <circle cx="157" cy="79" r="2.2" fill="white" opacity=".9"/>
+        <!-- second smaller catchlight -->
+        <circle cx="122" cy="85" r="1" fill="white" opacity=".5"/>
+        <circle cx="150" cy="85" r="1" fill="white" opacity=".5"/>
+        <!-- eyelashes (simple lines) -->
+        <path d="M115 76 L112 73" stroke="rgba(80,50,20,.6)" stroke-width="1.2"/>
+        <path d="M115 80 L111 79" stroke="rgba(80,50,20,.6)" stroke-width="1.2"/>
+        <path d="M165 76 L168 73" stroke="rgba(80,50,20,.6)" stroke-width="1.2"/>
+        <path d="M165 80 L169 79" stroke="rgba(80,50,20,.6)" stroke-width="1.2"/>
+
+        <!-- nose -->
+        <path d="M136 90 Q140 96 144 90" fill="none" stroke="rgba(160,100,40,.35)" stroke-width="1.5" stroke-linecap="round"/>
+
+        <!-- smirk / playful smile -->
+        <path d="M128 102 Q140 110 154 103" fill="none" stroke="rgba(160,80,40,.55)" stroke-width="2" stroke-linecap="round"/>
+
+        <!-- ear studs (detail) -->
+        <circle cx="97"  cy="85" r="4" fill="url(#skin)"/>
+        <circle cx="97"  cy="85" r="2" fill="#ffd700" opacity=".8"/>
+        <circle cx="183" cy="85" r="4" fill="url(#skin)"/>
+        <circle cx="183" cy="85" r="2" fill="#ffd700" opacity=".8"/>
+
+        <!-- ── NECK CHAIN DETAIL ── -->
+        <path d="M122 116 Q140 122 158 116" fill="none" stroke="rgba(255,215,0,.5)" stroke-width="1.5" stroke-linecap="round"/>
+
+        <!-- ── SPARKLING GLOW STARS around character ── -->
+        <g fill="#00e87a" opacity=".7">
+          <polygon points="40,90  42,96  48,96  43,100  45,106  40,102  35,106  37,100  32,96  38,96" transform="scale(.6) translate(28,80)"/>
+          <polygon points="230,60 232,66 238,66 233,70 235,76 230,72 225,76 227,70 222,66 228,66" transform="scale(.5) translate(180,30)"/>
+        </g>
+        <g fill="#4a7fff" opacity=".5">
+          <polygon points="252,180 253,185 258,185 254,188 256,193 252,190 248,193 250,188 246,185 251,185" transform="scale(.6) translate(168,96)"/>
+        </g>
+        <g fill="#ff2d55" opacity=".4">
+          <polygon points="22,200 23,205 28,205 24,208 26,213 22,210 18,213 20,208 16,205 21,205" transform="scale(.5) translate(10,170)"/>
+        </g>
+      </svg>
+    </div>
+    <!-- end char-wrap -->
+
+    <!-- ── TITLE ── -->
+    <div class="glitch-wrap" data-text="$HEUY">
+      <h1 class="hero-title">$HEUY</h1>
+    </div>
+    <p class="hero-sub">Heuy Asexual Token &nbsp;·&nbsp; Solana</p>
+
+    <p class="tagline-box">
+      <em style="font-style:normal">
+        The village hero who defeats gangs…
+        <span class="no-pump">but never gets hard.</span><br/>
+        <span class="gem">Eternal tease. Zero release.</span> 💎🚫🍆
+      </em>
+    </p>
+
+    <div class="hero-cta">
+      <a href="#buy" class="btn-primary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        Buy $HEUY Now
+      </a>
+      <a href="#about" class="btn-outline">Learn the Legend</a>
+    </div>
+
+  </div><!-- hero-inner -->
+
+  <div class="scroll-hint" aria-hidden="true">
+    <span>Scroll</span>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     STATS BAR
+════════════════════════════════════════════════ -->
+<div class="stats-bar" id="stats">
+  <div class="stats-grid">
+
+    <div class="stat">
+      <div class="stat-lbl">Contract Address</div>
+      <div class="stat-val">0x7880d8a7482e90d263f5B5Fe09C6C7b3246bB984</div>
+    </div>
+
+    <div class="stat">
+      <div class="stat-lbl">Chain</div>
+      <div class="stat-val">
+        <span class="pill">◎ Solana</span>
+      </div>
+    </div>
+
+    <div class="stat">
+      <div class="stat-lbl">Launch Type</div>
+      <div class="stat-val">
+        <span class="pill">🔥 Fair Launch</span>
+      </div>
+    </div>
+
+    <div class="stat">
+      <div class="stat-lbl">Liquidity</div>
+      <div class="stat-val">
+        <span class="pill">🔥 LP Burned</span>
+      </div>
+    </div>
+
+    <div class="stat">
+      <div class="stat-lbl">Contract Owner</div>
+      <div class="stat-val">
+        <span class="pill pill-red">✅ Renounced</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     ABOUT
+════════════════════════════════════════════════ -->
+<section class="section" id="about">
+  <div class="section-inner">
+    <span class="eyebrow">The Legend</span>
+    <h2 class="section-h">Who is <span style="color:var(--emerald)">Heuy</span>?</h2>
+
+    <div class="about-card">
+      <p class="about-text">
+        <strong>Heuy Asexual Token ($HEUY)</strong> is a fun, ironic meme coin celebrating the legendary hero <em>Heuy</em>: the ultra-sexy, platinum-blond, emerald-eyed village savior who's powerfully built, flawlessly smooth, and <strong>proudly asexual</strong> — no erections, ever. He defies temptation, resists seduction, yet his glistening curves, tight heroic outfit, and teasingly soft bulge drive everyone wild. <em>Pure aesthetic chaos without the payoff.</em> Community-driven, zero utility, maximum thirst-trap vibes. Join the cult of the <strong>eternally flaccid hero!</strong>
+      </p>
+    </div>
+
+    <!-- ── FEATURES ── -->
+    <div class="features-grid" id="features">
+
+      <div class="feat-card">
+        <span class="feat-icon">♾️</span>
+        <div class="feat-title">Asexual Icon</div>
+        <p class="feat-desc">Proudly on the ace spectrum. Drives the entire village wild — and doesn't care even a little bit.</p>
+      </div>
+
+      <div class="feat-card">
+        <span class="feat-icon">🥺</span>
+        <div class="feat-title">Ultimate Simp Bait</div>
+        <p class="feat-desc">Perfectly sculpted. Perfectly indifferent. Your tokens are going up; Heuy is not.</p>
+      </div>
+
+      <div class="feat-card">
+        <span class="feat-icon">✊</span>
+        <div class="feat-title">Feminist Critique Approved(?)</div>
+        <p class="feat-desc">A hyper-sexualised male figure who exists purely for the aesthetic gaze. Art, discourse, or meme? Yes.</p>
+      </div>
+
+      <div class="feat-card">
+        <span class="feat-icon">📈🚫</span>
+        <div class="feat-title">No Pump. Just Vibes.</div>
+        <p class="feat-desc">Community-driven. Zero utility. Maximum thirst-trap energy. This is the way.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     MEME GALLERY
+════════════════════════════════════════════════ -->
+<section class="section" id="memes" style="padding-top:0">
+  <div class="section-inner">
+    <span class="eyebrow">Meme Gallery</span>
+    <h2 class="section-h">The <span style="color:var(--red)">Hall of Eternal Softness</span></h2>
+
+    <div class="meme-grid">
+
+      <div class="meme-card">
+        <div class="meme-visual meme-bg-1">
+          <div class="meme-top-text">HEUY REACTION</div>
+          <div class="meme-emoji">😏💅</div>
+          <div class="meme-label" style="color:var(--glow)">Unbothered Mode</div>
+        </div>
+        <div class="meme-bar">
+          <div class="meme-caption">Heuy when girls try 😌</div>
+          <div class="meme-cap-sub">"Cute. Anyway, I have a gang to defeat." — Heuy, probably</div>
+        </div>
+      </div>
+
+      <div class="meme-card">
+        <div class="meme-visual meme-bg-2">
+          <div class="meme-top-text">POST-BATTLE REPORT</div>
+          <div class="meme-emoji">⚔️😴</div>
+          <div class="meme-label" style="color:var(--red-light)">100% Flaccid</div>
+        </div>
+        <div class="meme-bar">
+          <div class="meme-caption">Still soft after saving the village 🫡</div>
+          <div class="meme-cap-sub">Defeated 47 men. Not excited once.</div>
+        </div>
+      </div>
+
+      <div class="meme-card">
+        <div class="meme-visual meme-bg-3">
+          <div class="meme-top-text">CORONATION DECREE</div>
+          <div class="meme-emoji">👑🫦</div>
+          <div class="meme-label" style="color:var(--emerald)">Eternal Reign</div>
+        </div>
+        <div class="meme-bar">
+          <div class="meme-caption">Eternal Flaccid King 👑</div>
+          <div class="meme-cap-sub">Wears a crown. Never wears pants properly.</div>
+        </div>
+      </div>
+
+      <div class="meme-card">
+        <div class="meme-visual meme-bg-4">
+          <div class="meme-top-text">VILLAGE RECORDS</div>
+          <div class="meme-emoji">💎🧊</div>
+          <div class="meme-label" style="color:#f59e0b">Cold As Ice</div>
+        </div>
+        <div class="meme-bar">
+          <div class="meme-caption">Curves that break hearts ❄️</div>
+          <div class="meme-cap-sub">Glistening. Glossy. Fully dressed. Fully done.</div>
+        </div>
+      </div>
+
+      <div class="meme-card">
+        <div class="meme-visual meme-bg-5">
+          <div class="meme-top-text">ECONOMIC ANALYSIS</div>
+          <div class="meme-emoji">📈🚫🍆</div>
+          <div class="meme-label" style="color:var(--glow)">Inverse Pump</div>
+        </div>
+        <div class="meme-bar">
+          <div class="meme-caption">Token pumps. Heuy doesn't. 📊</div>
+          <div class="meme-cap-sub">One of these is going to the moon.</div>
+        </div>
+      </div>
+
+      <div class="meme-card">
+        <div class="meme-visual meme-bg-6">
+          <div class="meme-top-text">SEDUCTION ATTEMPT #247</div>
+          <div class="meme-emoji">🥵➡️😐</div>
+          <div class="meme-label" style="color:var(--red-light)">Rejected Again</div>
+        </div>
+        <div class="meme-bar">
+          <div class="meme-caption">She sent the eggplant emoji 🍆</div>
+          <div class="meme-cap-sub">He replied: "which recipe?" — He is built different.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     BUY SECTION
+════════════════════════════════════════════════ -->
+<div class="buy-section" id="buy">
+  <div class="buy-inner">
+    <span class="eyebrow">Get Involved</span>
+    <h2 class="section-h">Buy <span style="color:var(--red)">$HEUY</span></h2>
+    <p class="buy-sub">Be part of the cult. Embrace the eternal tease. Hold a piece of Heuy forever.</p>
+
+    <!-- Contract Copy Box -->
+    <div class="contract-box">
+      <div class="contract-box-left">
+        <div class="contract-lbl">Contract Address</div>
+        <div class="contract-addr" id="ca-text">0x7880d8a7482e90d263f5B5Fe09C6C7b3246bB984</div>
+      </div>
+      <button class="copy-btn" id="copy-ca-btn" onclick="copyCA()">Copy CA</button>
+    </div>
+
+    <!-- Exchange Buttons -->
+    <div class="buy-buttons">
+      <a href="https://raydium.io" target="_blank" rel="noopener" class="exch-btn exch-raydium">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path fill="rgba(255,255,255,.3)" d="M8 8h8v8H8z"/></svg>
+        Raydium
+      </a>
+      <a href="https://pump.fun" target="_blank" rel="noopener" class="exch-btn exch-pump">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        Pump.fun
+      </a>
+      <a href="https://dexscreener.com" target="_blank" rel="noopener" class="exch-btn exch-dex">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><polyline points="9 15 12 9 15 15"/></svg>
+        DexScreener
+      </a>
+    </div>
+
+    <!-- How to buy steps -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;margin-bottom:36px;">
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 16px;text-align:center;">
+        <div style="font-size:1.8rem;margin-bottom:10px;">🔑</div>
+        <div style="font-family:'Orbitron',monospace;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">1. Get a wallet</div>
+        <div style="font-size:.75rem;color:var(--muted);">Phantom or Solflare. Takes 2 minutes.</div>
+      </div>
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 16px;text-align:center;">
+        <div style="font-size:1.8rem;margin-bottom:10px;">◎</div>
+        <div style="font-family:'Orbitron',monospace;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">2. Get SOL</div>
+        <div style="font-size:.75rem;color:var(--muted);">Buy SOL on any exchange and bridge it to Solana.</div>
+      </div>
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 16px;text-align:center;">
+        <div style="font-size:1.8rem;margin-bottom:10px;">🔄</div>
+        <div style="font-family:'Orbitron',monospace;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">3. Swap for $HEUY</div>
+        <div style="font-size:.75rem;color:var(--muted);">Paste the CA on Raydium or Pump.fun and swap.</div>
+      </div>
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 16px;text-align:center;">
+        <div style="font-size:1.8rem;margin-bottom:10px;">🫡</div>
+        <div style="font-family:'Orbitron',monospace;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">4. Become a believer</div>
+        <div style="font-size:.75rem;color:var(--muted);">Join the cult. Hold $HEUY. Worship the king.</div>
+      </div>
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="disclaimer">
+      <strong>⚠️ This is a meme coin with zero utility and no financial promises.</strong><br/>
+      $HEUY is a satirical, community-driven project created purely for entertainment. Do not invest more than you can afford to lose. This is not financial advice. Crypto assets are highly volatile. Always DYOR (Do Your Own Research). The creators make no guarantees of return on investment.
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════ -->
+<footer>
+  <div class="social-row">
+    <a href="https://twitter.com" target="_blank" rel="noopener" class="soc-btn soc-x">
+      <!-- X / Twitter icon -->
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.849L1.258 2.25H8.08l4.277 5.654 5.887-5.654zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+      </svg>
+      Follow on X
+    </a>
+    <a href="https://t.me" target="_blank" rel="noopener" class="soc-btn soc-tg">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+      </svg>
+      Join Telegram
+    </a>
+  </div>
+
+  <div class="footer-logo">$HEUY</div>
+  <p class="footer-fine">
+    © 2025 Heuy Asexual Token. All rights not reserved — this is a meme.<br/>
+    $HEUY is a satirical meme coin on Solana. Not financial advice. Not investment advice.<br/>
+    <a href="#">Terms</a> &nbsp;·&nbsp; <a href="#">Privacy</a>
+  </p>
+</footer>
+
+<!-- ═══════════════════════════════════════════════
+     JAVASCRIPT
+════════════════════════════════════════════════ -->
+<script>
+  /* ── Particles ── */
+  (function spawnParticles() {
+    const container = document.getElementById('particles');
+    const colors = ['#00e87a','#4a7fff','#ff2d55','#ffffff','#b8d4ff'];
+    for (let i = 0; i < 55; i++) {
+      const p = document.createElement('div');
+      p.className = 'pt';
+      const size = Math.random() * 3 + 1;
+      p.style.cssText = [
+        `width:${size}px`,
+        `height:${size}px`,
+        `left:${Math.random() * 100}%`,
+        `background:${colors[Math.floor(Math.random() * colors.length)]}`,
+        `animation-duration:${8 + Math.random() * 18}s`,
+        `animation-delay:${Math.random() * 18}s`,
+        `box-shadow:0 0 ${size*2}px ${colors[Math.floor(Math.random() * colors.length)]}`,
+      ].join(';');
+      container.appendChild(p);
+    }
+  })();
+
+  /* ── Copy Contract Address ── */
+  function copyCA() {
+    const addr = document.getElementById('ca-text').innerText;
+    navigator.clipboard.writeText(addr).then(() => {
+      const btn = document.getElementById('copy-ca-btn');
+      btn.textContent = '✓ Copied!';
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.textContent = 'Copy CA';
+        btn.classList.remove('copied');
+      }, 2200);
+    }).catch(() => {
+      /* fallback for older browsers */
+      const ta = document.createElement('textarea');
+      ta.value = addr;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      const btn = document.getElementById('copy-ca-btn');
+      btn.textContent = '✓ Copied!';
+      btn.classList.add('copied');
+      setTimeout(() => { btn.textContent = 'Copy CA'; btn.classList.remove('copied'); }, 2200);
+    });
+  }
+
+  /* ── Smooth scroll for nav links ── */
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior:'smooth', block:'start' }); }
+    });
+  });
+
+  /* ── Nav scroll shrink ── */
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 60) {
+      nav.style.padding = '10px 32px';
+      nav.style.background = 'rgba(6,9,31,.96)';
+    } else {
+      nav.style.padding = '14px 32px';
+      nav.style.background = 'rgba(6,9,31,.88)';
+    }
+  }, { passive:true });
+
+  /* ── Intersection Observer — fade-in sections ── */
+  const IO = new IntersectionObserver((entries) => {
+    entries.forEach(en => {
+      if (en.isIntersecting) {
+        en.target.style.opacity = '1';
+        en.target.style.transform = 'translateY(0)';
+        IO.unobserve(en.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.feat-card, .meme-card, .about-card, .stat').forEach(el => {
+    el.style.opacity    = '0';
+    el.style.transform  = 'translateY(30px)';
+    el.style.transition = 'opacity .55s ease, transform .55s ease';
+    IO.observe(el);
+  });
+</script>
+
+</body>
+</html>
