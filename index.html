@@ -171,6 +171,7 @@
     /* ── CHARACTER IMAGE WRAPPER ── */
     .char-wrap {
       position:relative; width:320px; height:460px;
+      display:block; margin:0 auto; z-index:3;
     }
     .char-halo {
       position:absolute; inset:-50px; border-radius:50%;
@@ -187,15 +188,12 @@
       filter: drop-shadow(0 0 32px rgba(74,127,255,.6))
               drop-shadow(0 0 12px rgba(0,232,122,.35));
       animation: hero-float 4s ease-in-out infinite;
+      cursor: pointer;
+      display:block;
     }
     @keyframes hero-float {
       0%,100% { transform:translateY(0px); }
       50%      { transform:translateY(-14px); }
-    }
-
-    /* ── CHAR ICON — clickable ── */
-    .char-img {
-      cursor: pointer;
     }
     .char-img:hover {
       filter: drop-shadow(0 0 44px rgba(74,127,255,.9))
