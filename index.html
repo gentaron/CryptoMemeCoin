@@ -8,6 +8,8 @@
   <meta property="og:description" content="The eternally flaccid hero of World Chain. Born on Puf. Community-driven. Maximum thirst-trap vibes." />
   <title>$HEUY – Heuy Asexual Token | World Chain Meme Coin</title>
 
+  <link rel="icon" type="image/png" href="icon.png" />
+  <link rel="apple-touch-icon" href="icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
 
@@ -189,6 +191,73 @@
     @keyframes hero-float {
       0%,100% { transform:translateY(0px); }
       50%      { transform:translateY(-14px); }
+    }
+
+    /* ── CHAR ICON — clickable ── */
+    .char-img {
+      cursor: pointer;
+    }
+    .char-img:hover {
+      filter: drop-shadow(0 0 44px rgba(74,127,255,.9))
+              drop-shadow(0 0 18px rgba(0,232,122,.55));
+    }
+    .char-img:active {
+      transform: scale(0.97);
+    }
+
+    /* ── IMAGE MODAL ── */
+    .img-modal-overlay {
+      display: none;
+      position: fixed; inset: 0; z-index: 9999;
+      background: rgba(6,9,31,.92);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .img-modal-overlay.open {
+      display: flex;
+      animation: modal-fade-in .25s ease;
+    }
+    @keyframes modal-fade-in {
+      from { opacity:0; transform:scale(.96); }
+      to   { opacity:1; transform:scale(1); }
+    }
+    .img-modal-box {
+      position: relative;
+      max-width: min(90vw, 600px);
+      max-height: 90vh;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(74,127,255,.4);
+      box-shadow: 0 0 60px rgba(74,127,255,.35), 0 0 20px rgba(0,232,122,.15);
+    }
+    .img-modal-box img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 90vh;
+      object-fit: contain;
+    }
+    .img-modal-close {
+      position: absolute;
+      top: 12px; right: 12px;
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: rgba(6,9,31,.8);
+      border: 1px solid rgba(74,127,255,.5);
+      color: #fff;
+      font-size: 18px;
+      line-height: 36px;
+      text-align: center;
+      cursor: pointer;
+      transition: background .2s, transform .2s;
+      user-select: none;
+    }
+    .img-modal-close:hover {
+      background: rgba(74,127,255,.35);
+      transform: scale(1.1);
     }
 
     /* ── TITLE ── */
@@ -618,10 +687,11 @@
       Now live on World Chain &nbsp;·&nbsp; Born on Puf &nbsp;·&nbsp; Fair Launch
     </div>
 
-    <!-- ── Heuy Character Image ── -->
+    <!-- ── Heuy Character Icon (tap to view full image) ── -->
     <div class="char-wrap">
       <div class="char-halo"></div>
-      <img class="char-img" src="heuy.png" alt="Heuy the Asexual Hero" />
+      <img class="char-img" src="icon.png" alt="Heuy the Asexual Hero"
+           onclick="openImgModal()" title="タップして画像を表示" />
     </div>
 
     <!-- ── TITLE ── -->
@@ -948,9 +1018,34 @@
 </footer>
 
 <!-- ═══════════════════════════════════════════════
+     IMAGE MODAL
+════════════════════════════════════════════════ -->
+<div class="img-modal-overlay" id="img-modal" onclick="closeImgModal(event)">
+  <div class="img-modal-box">
+    <span class="img-modal-close" onclick="closeImgModal()">✕</span>
+    <img src="heuy.png" alt="Heuy Full Image" />
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
      JAVASCRIPT
 ════════════════════════════════════════════════ -->
 <script>
+  /* ── Image Modal ── */
+  function openImgModal() {
+    document.getElementById('img-modal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeImgModal(e) {
+    if (!e || e.target === document.getElementById('img-modal') || e.target.classList.contains('img-modal-close')) {
+      document.getElementById('img-modal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  }
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeImgModal({ target: document.getElementById('img-modal') });
+  });
+
   /* ── Particles ── */
   (function spawnParticles() {
     const container = document.getElementById('particles');
